@@ -16,7 +16,7 @@ sh module_build.sh'''
 cd /home/yinyong
 
 
-./sshpass -p bigdata@71 scp -o StrictHostKeyChecking=no /home/yinyong/web/webinner/${file##*/} root@172.16.1.71:/home/zz
+./sshpass -p bigdata@71 scp -o StrictHostKeyChecking=no /home/yinyong/web/webinner/${file##*/} root@172.16.1.71:/home/zzz
 
  '''
       }
@@ -24,22 +24,7 @@ cd /home/yinyong
 
     stage('Install') {
       steps {
-        sh '''echo "#!/bin/bash
-yum -y install expect
-expect -c "
-spawn scp -r /home/yinyong/web/webinner/xwtd-webinner-install-20200715.tar.gz root@172.16.1.71:/home/zzz
-expect {
-    \\"*assword\\" 
-                {
-                    set timeout 300; 
-                    send \\"bigdata@71\\r\\";
-                }
-    \\"yes/no\\" 
-                {
-                    send \\"yes\\r\\"; exp_continue;}
-                }
-expect eof" > scp.sh
-
+        sh '''echo "end"
 
 '''
       }
