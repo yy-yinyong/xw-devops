@@ -9,7 +9,7 @@ rm -rf web;
 
 svn co https://172.16.0.58:7777/svn/project/xwtd/trunk/web
 '''
-        sh '''cd /home/yinyong/web/webinner
+        sh '''cd /home/yinyong/web/webouter
 sh module_build.sh'''
         sh '''file=$(find /home/yinyong/web/webinner -name *.tar.gz)
 
